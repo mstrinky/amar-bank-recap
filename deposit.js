@@ -4,13 +4,18 @@ document.getElementById('btn-deposit').addEventListener('click',function(){
     const newDepositAmountString = depositField.value ;
     // console.log(newDepositAmountString);
     const newDepositAmount = parseFloat(newDepositAmountString);
-    console.log(newDepositAmount);
+    // console.log(newDepositAmount);
     depositField.value = '';
 
     const depositTotalElement = document.getElementById('deposit-total');
     const previousDepositTotalString = depositTotalElement.innerText;
     const previousDepositTotal = parseFloat(previousDepositTotalString);
-
     const newDepositTotal = previousDepositTotal + newDepositAmount;
     depositTotalElement.innerText = newDepositTotal;
+
+    const balanceTotalElement = document.getElementById('balance-total');
+    const previousBalanceTotalString = balanceTotalElement.innerText;
+    const previousBalanceTotalAmount = parseFloat(previousBalanceTotalString);
+    const newBalanceTotal = previousBalanceTotalAmount + newDepositAmount;
+     balanceTotalElement.innerText = newBalanceTotal;
 })
